@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles.css">
+    <title>list of Users</title>
+</head>
+<body>
+    <div class="container">
+        
+        <ul class="list-group">
+            <h3>Registered Users</h3>
+            <!---
+            <li class="list-group-item">An item</li>
+            -->
+            
+          </ul>
+          <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody id="userTable"></tbody>
+        </table>
+    </div>
+    
+
+    
+
+
+</body>
+<script>
+    
+    const getUser = localStorage.getItem('user');
+    if(getUser){
+
+        const usr = JSON.parse(getUser);
+
+        usr.forEach(user => {
+            const ul = document.querySelector('ul');
+             console.log(ul);
+             const li = document.createElement('li');
+             li.className='list-group-item'
+             const container = document.createElement('div')
+             const Uname = document.createElement('div')
+             Uname.innerHTML =`<strong>Username:</strong>${user.Uname}`
+         
+             const email = document.createElement('div')
+             email.innerHTML =`<strong>Email:</strong>${user.email}`
+
+             const pwd = document.createElement('div')
+             pwd.innerHTML =`<strong>password:</strong>${user.pwd}`
+
+
+        container.appendChild(Uname)
+        container.appendChild(email)
+        container.appendChild(pwd)
+        li.appendChild(container)
+        ul.appendChild(li);
+            
+        });
+       
+    }
+
+    
+        // Fetch user data from local storage
+        let users = JSON.parse(localStorage.getItem("user")) || [];
+
+        // Populate table
+        let tableBody = document.getElementById("userTable");
+        users.forEach(user => {
+            let row = `<tr>
+                        <td>${user.Uname}</td>
+                        <td>${user.email}</td>
+                        <td>${user.pwd}</td>
+                       </tr>`;
+            tableBody.innerHTML += row;
+        });
+  
+   
+    
+</script>
+</html>

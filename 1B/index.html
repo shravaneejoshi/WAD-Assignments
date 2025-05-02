@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+  <title> Student Form</title>
+
+</head>
+<body>
+    <div>
+  <form>
+   
+    <h2>User Registration</h2>
+
+    <label for="Uname">Username</label>
+    <input type="text" id="Uname" placeholder="First name" />
+
+    <label for="email">Email</label>
+    <input type="text" id="email" placeholder="Email address" />
+
+    <label for="pwd">Password</label>
+    <input type="password" id="pwd" placeholder="Enter Password" />
+<br><br>
+  
+    <button type="submit">Register User</button>
+  </form>
+  </div>
+</body>
+<script>
+form = document.querySelector('form');
+
+form.addEventListener('submit',(event)=>{
+  event.preventDefault();
+  let user ={
+    Uname:document.getElementById('Uname').value ,
+     email: document.getElementById('email').value ,
+     pwd:document.getElementById('pwd').value
+  };
+
+
+ // get User
+
+let xhr = new XMLHttpRequest();
+xhr.open('POST',"https://jsonplaceholder.typicode.com/posts",true);
+
+xhr.setRequestHeader('Content-type','application/json');
+
+xhr.onreadystatechange = function(){
+
+    if(xhr.readyState==4 && xhr.status==201){
+        let newUser = JSON.parse(localStorage.getItem('user')||'[]');
+        console.log(newUser);
+//push to array
+        newUser.push(user);
+
+//store in local storage
+        localStorage.setItem('user',JSON.stringify(newUser))
+
+        window.location.href="list.html";
+
+    }
+};
+ 
+ xhr.send(JSON.stringify(user));
+    
+});
+
+</script>
+</html>

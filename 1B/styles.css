@@ -1,0 +1,79 @@
+
+
+  .card input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  label {
+    margin-top: 10px;
+    font-weight: 500;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 44px 44px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 700px;
+  }
+
+ 
+
+  label {
+    display: block;
+    margin: 8px 0 4px;
+    font-size: 14px;
+    color: #333;
+  }
+
+  input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+
+
+ 
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #003049;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+ 
+  .btn-primary{
+    background-color: #003049;
+  }
+
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .list-group{
+    width: 500px;
+
+  }
