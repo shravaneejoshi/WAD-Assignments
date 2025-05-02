@@ -1,0 +1,47 @@
+Creating folder on github
+1)create folder on your PC
+2)clone repo
+git clone https://github.com/shravaneejoshi/WAD-Assignments.git
+
+3)cd repo name 
+(created in your folder)
+4)mkdir -p folder name
+	5) Move required files into folder
+	6)  git add .(git add 3A/)
+	7) Git status
+	8) Git remote -v
+	9) git push origin main (or master branch)
+
+OR
+git add .
+git commit -m "Initial commit or adding new files"
+git branch -M main        # Rename branch to main if not already
+git push -u origin main   # Push to GitHub
+
+Command	What It Does	Use Case
+git push origin main	Pushes branch main to origin	Use when the branch is already linked
+git push -u origin main	Pushes and sets tracking info	Use when pushing a new branch for the first time
+
+
+Git Steps:(for first time push to new repo)
+	1) Create your repo manually on github account
+	2) Make sure you're in a Git repo
+	 git status   
+	
+	If it says: fatal: not a git repository, you need to initialize it:
+	git init 
+	
+ 3) git remote -v
+     if no output
+     git remote add origin https://github.com/your-username/your-repo.git
+
+o/p
+
+origin  https://github.com/your-username/your-repo.git (fetch)
+origin  https://github.com/your-username/your-repo.git  (push)
+
+4)
+git add .(or git add 3A/)
+git commit -m "Initial commit or adding new files"
+git branch -M main        # Rename branch to main if not already
+git push -u origin main   # Push to GitHub
