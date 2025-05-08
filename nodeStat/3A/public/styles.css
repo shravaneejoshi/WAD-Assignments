@@ -1,0 +1,31 @@
+body{
+    background-color: #d7dbe3;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.form-wrapper{
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10;
+   
+    width: 500px;
+    background-color: white;
+    
+}
+
+input{
+    border: solid 2px black;
+}
+
+.container-fluid{
+  background-color: aliceblue;
+  width: 100vw; 
+}
+
+
+
+  

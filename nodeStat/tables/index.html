@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Results and CGPA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .table-container {
+            width: 45%;
+            margin-bottom: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        tr:hover {
+            background-color: #ddd;
+        }
+        
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+        
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Academic Information</h1>
+    
+    <div class="container">
+        <!-- Table 1: Student Names and Results (Left) -->
+        <div class="table-container">
+            <h2>Student Results</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Smith</td>
+                        <td class="pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>Emily Johnson</td>
+                        <td class="pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Brown</td>
+                        <td class="fail">Fail</td>
+                    </tr>
+                    <tr>
+                        <td>Jessica Davis</td>
+                        <td class="pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>David Wilson</td>
+                        <td class="fail">Fail</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Table 2: Student Names and CGPA (Right) -->
+        <div class="table-container">
+            <h2>Student CGPA</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student Name</th>
+                        <th>CGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John Smith</td>
+                        <td>3.8</td>
+                    </tr>
+                    <tr>
+                        <td>Emily Johnson</td>
+                        <td>3.5</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Brown</td>
+                        <td>1.9</td>
+                    </tr>
+                    <tr>
+                        <td>Jessica Davis</td>
+                        <td>3.2</td>
+                    </tr>
+                    <tr>
+                        <td>David Wilson</td>
+                        <td>1.7</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
