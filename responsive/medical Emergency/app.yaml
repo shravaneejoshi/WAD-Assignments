@@ -1,0 +1,10 @@
+runtime: python310  # Required even though you’re only serving static files
+entrypoint: gunicorn -b :$PORT main:app
+
+handlers:
+  - url: /
+    static_files: index.html
+    upload: index.html
+  - url: /(.*)
+    static_files: \1
+    upload: (.*)

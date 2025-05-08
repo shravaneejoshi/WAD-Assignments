@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityMed Emergency Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Minimal custom CSS */
+        .service-card {
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 3rem;
+            color: #dc3545;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+        }
+        #contact {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-ambulance me-2"></i>
+                <strong>CityMed Emergency Services</strong>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-light py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold text-danger">Emergency Medical Services</h1>
+                    <p class="lead">Providing 24/7 emergency medical services across the city. Your health is our priority.</p>
+                    <button id="contactButton" class="btn btn-danger btn-lg">Contact Us Now</button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/api/placeholder/600/400" alt="Emergency Services" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Emergency Services</h2>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-ambulance"></i>
+                            </div>
+                            <h4 class="card-title">Ambulance Service</h4>
+                            <p class="card-text">24/7 emergency ambulance services with fully equipped medical facilities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <h4 class="card-title">Critical Care</h4>
+                            <p class="card-text">Immediate response for heart attacks, strokes, and other critical emergencies</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-stethoscope"></i>
+                            </div>
+                            <h4 class="card-title">Emergency Consultations</h4>
+                            <p class="card-text">Immediate access to emergency physicians for urgent medical needs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-first-aid"></i>
+                            </div>
+                            <h4 class="card-title">First Aid Services</h4>
+                            <p class="card-text">Immediate first aid response for accidents and injuries</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-procedures"></i>
+                            </div>
+                            <h4 class="card-title">Emergency Surgery</h4>
+                            <p class="card-text">Fully equipped operation theaters for emergency surgical procedures</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="col-md-4">
+                    <div class="card service-card h-100 text-center">
+                        <div class="card-body">
+                            <div class="service-icon mb-3">
+                                <i class="fas fa-helicopter"></i>
+                            </div>
+                            <h4 class="card-title">Air Ambulance</h4>
+                            <p class="card-text">Helicopter evacuation services for remote locations and critical situations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">About CityMed Emergency</h2>
+                    <p>CityMed Emergency Services is dedicated to providing fast, reliable, and professional emergency medical care across the city. Our team of experienced doctors, paramedics, and support staff work around the clock to ensure that medical help is always available when you need it most.</p>
+                    <p>With state-of-the-art equipment and a fleet of ambulances strategically positioned throughout the city, we can respond to emergencies rapidly and efficiently.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/api/placeholder/600/400" alt="About Us" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Hidden initially) -->
+    <section id="contact" class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h4 class="card-title">Emergency Hotline</h4>
+                            <p class="card-text"><i class="fas fa-phone-alt text-danger me-2"></i> <strong>1-800-EMERGENCY</strong> (1-800-367-4362)</p>
+                            <p class="card-text">Available 24/7 for all emergencies</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Main Office</h4>
+                            <p class="card-text"><i class="fas fa-map-marker-alt text-danger me-2"></i> 123 Medical Plaza, Downtown</p>
+                            <p class="card-text"><i class="fas fa-envelope text-danger me-2"></i> info@citymed-emergency.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Send Us a Message</h4>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-danger">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>CityMed Emergency Services</h5>
+                    <p>Providing life-saving emergency medical services 24/7</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#services" class="text-white">Services</a></li>
+                        <li><a href="#about" class="text-white">About</a></li>
+                        <li><a href="#contact" class="text-white contact-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Connect With Us</h5>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-square fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter-square fa-2x"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram-square fa-2x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 CityMed Emergency Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Simple JavaScript for Contact Section Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Function to toggle contact section
+            function showContact(e) {
+                if(e) e.preventDefault();
+                document.getElementById('contact').style.display = 
+                    document.getElementById('contact').style.display === 'none' ? 'block' : 'none';
+                
+                if(document.getElementById('contact').style.display === 'block') {
+                    document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+                }
+            }
+            
+            // Add event listeners
+            document.querySelectorAll('.contact-link').forEach(link => {
+                link.addEventListener('click', showContact);
+            });
+            
+            document.getElementById('contactButton').addEventListener('click', showContact);
+        });
+    </script>
+</body>
+</html>
