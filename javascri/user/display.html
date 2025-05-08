@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Registered Users</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>All Registered Users</h1>
+    <div id="usersList"></div>
+    <button onclick="window.location.href='Register.html'">Register Another User</button>
+  </div>
+
+  <script>
+    function displayUsers() {
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const container = document.getElementById("usersList");
+
+      if (users.length === 0) {
+        container.innerHTML = "<p>No registered users found.</p>";
+        return;
+      }
+
+      users.forEach((user, index) => {
+        const userDiv = document.createElement("div");
+        userDiv.className = "user-card";
+
+        userDiv.innerHTML = `
+          <h3>User ${index + 1}</h3>
+          <p><strong>First Name:</strong> ${user.firstName}</p>
+          <p><strong>Last Name:</strong> ${user.lastName}</p>
+          <p><strong>Date of Birth:</strong> ${user.dob}</p>
+          <p><strong>Gender:</strong> ${user.gender}</p>
+          <p><strong>Mobile:</strong> ${user.mobile}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+          <hr/>
+        `;
+
+        container.appendChild(userDiv);
+      });
+    }
+
+    displayUsers();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div class="card" style="width: 26rem;">
+          <div class="card-header" style="text-align: center;" >
+            
+           <h3><strong>Student List</strong></h3> 
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">An item <button type="button" class="btn btn-primary">Update</button>
+          <button type="button" class="btn btn-danger" >remove</button> </li>
+            
+            
+          </ul>
+        </div>
+</body>
+<script>
+  //retrieve the student data from local storage
+
+  const getUser = localStorage.getItem('user')
+
+  if(getUser)
+{
+  //convert into JS object
+
+  const user = JSON.parse(getUser);
+
+  usr.forEach(user => {
+            const ul = document.querySelector('ul');
+             console.log(ul);
+             const li = document.createElement('li');
+             li.className='list-group-item'
+             const container = document.createElement('div')
+             const fname = document.createElement('div')
+             Uname.innerHTML =`<strong>Username:</strong>${user.fname}`
+         
+             const lname = document.createElement('div')
+             email.innerHTML =`<strong>Email:</strong>${user.lname}`
+
+        
+
+    
+   
+    
+    btngrp.appendChild(updButton)
+    btngrp.appendChild(delButton)
+
+   li.appendChild(studInfoNode)
+    li.appendChild(btngrp)
+
+    ul.appendChild(li)
+    
+
+ });
+  
+
+ 
+
+
+}
+</script>
+</html>

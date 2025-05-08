@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
+  <title> Student Form</title>
+
+</head>
+<body>
+
+  <form>
+   
+    <h2>Add Student</h2>
+
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" placeholder="First name" />
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" placeholder="Last name" />
+ 
+    <label for="mob">Mobile</label>
+    <input type="text" id="mob" placeholder="Mobile" />
+
+      <label for="date">Date</label>
+      <div class="date">
+       <input type="date" id="date">
+      </div>
+ 
+    <label><strong>Gender</strong></label>
+    <div class="radio-group">
+      <input type="radio" id="Female" name="gender" value="Female" />
+      <label for="Female">Female</label>
+
+      <input type="radio" id="Male" name="gender" value="Male" />
+      <label for="Male">Male</label>
+
+      <input type="radio" id="other" name="gender" value="other" />
+      <label for="other">other</label>
+    </div>
+
+   
+
+    <button type="submit">Add Student</button>
+  </form>
+
+  
+  </div>
+</body>
+<script>
+
+ const form = document.querySelector('form')
+
+  
+  form.addEventListener('submit',(event)=>{
+event.preventDefault()
+
+const firstname = document.getElementById('fname').value
+//console.log(firstname)
+const lastname = document.getElementById('lname').value
+//console.log(lastname)
+const mob = document.getElementById('mob').value
+//console.log(email);
+
+
+const branch = document.querySelector('input[name="gender"]:checked').value
+//console.log(branch)
+
+const date = document.getElementById('date')
+const student ={firstname, lastname, mob, gender, date}
+
+//console.log(student);
+
+
+//if we dont use =>JSON.stringify => gives [object Object] => which is not readable => it is  string notation of object
+
+// step 1 : get the items even if empty object but dont use setItems as it will only give existing item and not give the array of items object
+
+//let newStudents = localStorage.getItem('students') 
+//console.log("first stud",newStudents);
+
+
+// convert string into a array 
+// = use JSON.parse =>returns =The Object, Array, string, number, boolean, or null value corresponding to the given JSON text.
+
+//if data then parse it or make an empty array
+
+// if (newStudents) {
+//   newStudents = JSON.parse(newStudents);
+// } else {
+//   newStudents = [];
+// }
+
+
+//optimised way
+let newUsers = JSON.parse(localStorage.getItem('user') || '[]')
+//console.log("first stud",newStudents);
+
+console.log('array',newUsers);
+
+// add students to array
+
+newStudents.push(user)
+console.log("in Array ",user);
+
+//save array into local storage
+
+localStorage.setItem('user',JSON.stringify(newUsers))
+
+window.location.href="display.html"
+
+  })
+
+  
+//updating the student info
+  window.addEventListener('DOMContentLoaded',function(){
+  const editStud = JSON.parse(localStorage.getItem('editStud'))
+
+  if(editStud){
+    document.getElementById('fname').value = editStud.firstname;
+
+    document.getElementById('lname').value =editStud.lastname;
+    document.getElementById('email').value = editStud.email;
+
+    document.getElementById('crn').value = editStud.crn;
+
+    // document.querySelector(`input[name="branch"][value="${editStud.branch}"]`).checked = true;
+
+    // document.querySelector(`input[name="classes"][value="${editStud.classes}"]`).checked = true;
+  }
+
+})
+</script>
+</html>
