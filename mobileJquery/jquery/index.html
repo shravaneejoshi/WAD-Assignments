@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic settings for mobile devices -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Page title -->
+    <title>My Task List</title>
+    
+    <!-- Include jQuery - this is the core JavaScript library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <!-- Include jQuery Mobile CSS - this provides mobile-friendly styling -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.css">
+    
+    <!-- Include jQuery Mobile JavaScript - this makes the mobile components work -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mobile/1.4.5/jquery.mobile.min.js"></script>
+    
+    <!-- Our custom styles - makes the app look nicer -->
+    <style>
+        /* Main colors and fonts for our app */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        
+        /* Style the header bar at the top */
+        .ui-header {
+            background-color: #4b6cb7 !important;
+            border-color: #4b6cb7 !important;
+            color: white !important;
+        }
+        
+        /* Style the title text in the header */
+        .ui-header h1 {
+            font-size: 1.2em;
+            color: white !important;
+            text-shadow: none !important;
+        }
+        
+        /* Style the footer bar at the bottom */
+        .ui-footer {
+            background-color: #182848 !important;
+            border-color: #182848 !important;
+            color: white !important;
+        }
+        
+        /* Add padding to the main content area */
+        .app-content {
+            padding: 15px;
+        }
+        
+        /* Style the task list */
+        #task-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            background-color: white;
+        }
+        
+        /* Style the form for adding tasks */
+        #add-form {
+            margin-bottom: 20px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Style the task input field */
+        #new-task {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        /* Style our buttons */
+        .app-button {
+            background-color: #4b6cb7 !important;
+            color: white !important;
+            text-shadow: none !important;
+            border: none !important;
+        }
+        
+        /* Style the completed tasks */
+        .completed {
+            text-decoration: line-through;
+            color: #999;
+        }
+        
+        /* Add some space between sections */
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        /* Style section headings */
+        h2 {
+            color: #182848;
+            border-bottom: 2px solid #4b6cb7;
+            padding-bottom: 5px;
+        }
+        
+        /* Welcome panel style */
+        .welcome-panel {
+            background-color: #e8f4ff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4b6cb7;
+        }
+        
+    
+    </style>
+</head>
+
+<body>
+    <!-- MAIN PAGE - This is the only page in our app -->
+    <!-- In jQuery Mobile, data-role="page" defines a page -->
+    <div data-role="page" id="home">
+        
+        <!-- The header bar at the top of the page -->
+        <div data-role="header">
+            <h1>My Task List</h1>
+        </div>
+        
+        <!-- Main content area -->
+        <div role="main" class="ui-content app-content">
+            
+            <!-- Welcome message explains how to use the app -->
+            <div class="welcome-panel">
+                <h3>Welcome to Your Task List</h3>
+                <p>This simple app lets you keep track of your tasks. Add new tasks in the form below and mark them as complete by tapping on them.</p>
+            </div>
+            
+            <!-- Section for adding new tasks -->
+            <div class="section">
+                <h2>Add New Task</h2>
+                
+                <!-- Form for adding tasks - very simple with just one input and button -->
+                <div id="add-form">
+                    <input type="text" id="new-task" placeholder="Enter a new task...">
+                    <button id="add-button" class="ui-btn app-button">Add Task</button>
+                </div>
+            </div>
+            
+            <!-- Section for displaying tasks -->
+            <div class="section">
+                <h2>My Tasks </h2>
+                
+                <!-- This is where our task list will appear -->
+                <ul id="task-list" data-role="listview" data-inset="true">
+                    <!-- Default message when no tasks are present -->
+                    <li id="default-item">Add your first task above</li>
+                </ul>
+                
+                <!-- Button to clear all tasks -->
+                <button id="clear-button" class="ui-btn app-button">Clear All Tasks</button>
+            </div>
+            
+        </div>
+        
+        <!-- Footer bar at the bottom -->
+        <div data-role="footer" data-position="fixed">
+            <h4>&copy; 2025 My Task List App</h4>
+        </div>
+    </div>
+
+    <!-- JavaScript - very simple, just for adding and showing tasks -->
+    <script>
+      
+    // This code runs after the entire web page (DOM) is fully loaded(similar to dom content loaded)
+    //This is to prevent any jQuery code from running before the document is finished loading (is ready).
+    $(document).ready(function () {
+
+        // Function to add a new task to the list
+        function addNewTask() {
+            // Get the text entered by the user in the input field
+            var taskText = $("#new-task").val().trim(); // .trim() removes any extra spaces
+
+            // Only proceed if the user actually entered some text
+            if (taskText !== "") {
+
+                // Remove the default "Add your first task above" message if it's still showing
+                $("#default-item").remove();
+
+                // Create a new <li> element with the task text
+                var newTaskItem = $("<li>").text(taskText);
+
+                // Add this new task item to the unordered list with id "task-list"
+                $("#task-list").append(newTaskItem);
+
+                // Clear the input field so the user can type a new task
+                $("#new-task").val("");
+
+                // jQuery Mobile needs this refresh to style the new list item properly
+                try {
+                    $("#task-list").listview("refresh");
+                } catch (e) {
+                    // If there's an error refreshing the list (rare), it's okay to ignore it
+                    console.log("Listview refresh error (safe to ignore)");
+                }
+
+            } else {
+                // If the input is empty, show an alert message
+                alert("Please enter a task!");
+            }
+        }
+
+        // When the user clicks the "Add Task" button
+        $("#add-button").on("click", function () {
+            addNewTask(); // Call the function that adds the task
+        });
+
+        // When the user clicks on any task item in the list
+        $(document).on("click", "#task-list li", function () {
+            // Ignore clicks on the default message
+            if ($(this).attr("id") !== "default-item") {
+                // Toggle the "completed" class which strikes through the task
+                $(this).toggleClass("completed");
+            }
+        });
+
+        // When the user clicks the "Clear All Tasks" button
+        $("#clear-button").on("click", function () {
+            // Ask for confirmation before deleting all tasks
+            if (confirm("Are you sure you want to clear all tasks?")) {
+                // Remove all tasks from the list
+                $("#task-list").empty();
+
+                // Add the default message back to the list
+                $("#task-list").append('<li id="default-item">Add your first task above</li>');
+
+                // Refresh the list view so styles are applied properly
+                try {
+                    $("#task-list").listview("refresh");
+                } catch (e) {
+                    console.log("Listview refresh error (safe to ignore)");
+                }
+            }
+        });
+
+    });
+
+
+    </script>
+</body>
+</html>

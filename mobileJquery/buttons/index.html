@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <title>Department Grid</title>
+    <style>
+        .ui-grid-d .ui-block-a,
+        .ui-grid-d .ui-block-b,
+        .ui-grid-d .ui-block-c,
+        .ui-grid-d .ui-block-d,
+        .ui-grid-d .ui-block-e {
+            width: 20% !important;
+        }
+        .department-button {
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div data-role="page" id="homePage">
+    <div data-role="header">
+        <h1>Departments</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <div class="ui-grid-d">
+            <div class="ui-block-a"><a href="it_info.html" data-role="button" class="department-button">IT</a></div>
+            <div class="ui-block-b"><a href="comp_info.html" data-role="button" class="department-button">COMP</a></div>
+            <div class="ui-block-c"><a href="entc_info.html" data-role="button" class="department-button">ETC</a></div>
+            <div class="ui-block-d"><a href="mech_info.html" data-role="button" class="department-button">MECH</a></div>
+            <div class="ui-block-e"><a href="elect_info.html" data-role="button" class="department-button">ELECT</a></div>
+        </div>
+        <div class="ui-grid-d">
+            <div class="ui-block-a"><a href="civil_info.html" data-role="button" class="department-button">CIVIL</a></div>
+            <div class="ui-block-b"><a href="chem_info.html" data-role="button" class="department-button">CHEM</a></div>
+            <div class="ui-block-d"><a href="auto_info.html" data-role="button" class="department-button">AUTO</a></div>
+            <div class="ui-block-e"><a href="bio_info.html" data-role="button" class="department-button">BIO</a></div>
+        </div>
+        </div>
+</div>
+
+</body>
+</html>

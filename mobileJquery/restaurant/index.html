@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- jQuery & jQuery Mobile CDN -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    .menu-img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .menu-title {
+      font-size: 1.5em;
+      color: #e67e22;
+    }
+    .menu-description {
+      font-size: 1em;
+      color: #555;
+    }
+    .menu-price {
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+  <div data-role="header" data-theme="b">
+    <h1>🍽️ Foodie's Delight</h1>
+  </div>
+
+  <div data-role="content">
+    <h2 style="color:#2980b9;">Menu</h2>
+    <ul data-role="listview" data-inset="true">
+      <li><a href="#details" data-transition="slide" onclick="showDetails('Pizza')">
+        <img src="https://via.placeholder.com/100x100?text=Pizza">
+        <h2>Cheese Pizza</h2>
+        <p>Classic mozzarella, tomato & basil</p>
+      </a></li>
+      <li><a href="#details" data-transition="slide" onclick="showDetails('Burger')">
+        <img src="https://via.placeholder.com/100x100?text=Burger">
+        <h2>Beef Burger</h2>
+        <p>Grilled patty, cheese, lettuce & sauce</p>
+      </a></li>
+      <li><a href="#details" data-transition="slide" onclick="showDetails('Pasta')">
+        <img src="https://via.placeholder.com/100x100?text=Pasta">
+        <h2>Alfredo Pasta</h2>
+        <p>Creamy white sauce with mushrooms</p>
+      </a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Details Page -->
+<div data-role="page" id="details">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Menu Details</h1>
+  </div>
+
+  <div data-role="content" id="detailContent">
+    <!-- Filled by JS -->
+  </div>
+</div>
+
+<script>
+  const menuData = {
+    Pizza: {
+      name: "Cheese Pizza",
+      desc: "Classic mozzarella, tomato, and fresh basil on hand-tossed crust.",
+      price: "$10.99",
+      img: "https://via.placeholder.com/400x200?text=Cheese+Pizza"
+    },
+    Burger: {
+      name: "Beef Burger",
+      desc: "Juicy grilled beef patty with cheese, lettuce, tomato and our special sauce.",
+      price: "$8.99",
+      img: "https://via.placeholder.com/400x200?text=Beef+Burger"
+    },
+    Pasta: {
+      name: "Alfredo Pasta",
+      desc: "Penne pasta tossed in creamy Alfredo sauce with mushrooms and parsley.",
+      price: "$9.49",
+      img: "https://via.placeholder.com/400x200?text=Alfredo+Pasta"
+    }
+  };
+
+  function showDetails(item) {
+    const data = menuData[item];
+    $('#detailContent').html(`
+      <img class="menu-img" src="${data.img}" alt="${data.name}">
+      <h2 class="menu-title">${data.name}</h2>
+      <p class="menu-description">${data.desc}</p>
+      <p class="menu-price">Price: ${data.price}</p>
+    `);
+  }
+</script>
+
+</body>
+</html>

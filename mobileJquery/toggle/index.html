@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- jQuery Mobile CDN -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    .form-label {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .thank-you {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Feedback Page -->
+<div data-role="page" id="feedback">
+
+  <div data-role="header" data-theme="b">
+    <h1>📝 Feedback Form</h1>
+  </div>
+
+  <div data-role="content">
+    <form id="feedbackForm">
+      
+      <label for="name" class="form-label">Your Name:</label>
+      <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+      <label for="service" class="form-label">How was our service?</label>
+      <input type="range" name="service" id="service" value="5" min="0" max="10">
+
+      <label for="recommend" class="form-label">Would you recommend us?</label>
+      <!-- Flipped Toggle Switch -->
+      <select name="recommend" id="recommend" data-role="flipswitch">
+        <option value="no">No</option>
+        <option value="yes" selected>Yes</option>
+      </select>
+
+      <label for="comments" class="form-label">Additional Comments:</label>
+      <textarea name="comments" id="comments" placeholder="Share your thoughts..."></textarea>
+
+      <input type="submit" value="Submit Feedback" data-theme="b">
+    </form>
+
+    <p id="thankYouMessage" class="thank-you" style="display:none;">Thank you for your feedback!</p>
+  </div>
+
+</div>
+
+<script>
+  // Handle form submission
+  $("#feedbackForm").on("submit", function(event) {
+    event.preventDefault();
+
+    // Optionally get the form values here
+    const name = $("#name").val();
+    const service = $("#service").val();
+    const recommend = $("#recommend").val();
+    const comments = $("#comments").val();
+
+    // Display thank you message
+    $("#thankYouMessage").show();
+
+    // Clear form
+    $("#feedbackForm")[0].reset();
+    $("#recommend").val("yes").flipswitch("refresh");
+  });
+</script>
+
+</body>
+</html>
