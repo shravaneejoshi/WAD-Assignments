@@ -1,0 +1,18 @@
+ npm --version
+npm install
+
+node --version
+
+npm i node
+
+npm init -y 
+
+nodemon --version
+
+npm i nodemon
+
+ npm start
+
+ npm run dev
+
+npm i express mongoose 
