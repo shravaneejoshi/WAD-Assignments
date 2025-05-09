@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery Mobile CSS & JS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <style>
+    .menu-img {
+      width: 30%;
+      height: 300px;
+      border-radius: 10px;
+    }
+    .menu-item {
+      background-color: #fff3e0;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+    .price {
+      font-weight: bold;
+      color: #d84315;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Home Page -->
+<div data-role="page" id="home">
+  <div data-role="header" data-theme="b">
+    <h1>🍽️ Our Menu</h1>
+  </div>
+
+  <div data-role="content">
+    <div class="menu-item">
+      <a href="#pizza" data-transition="slide">
+        <img src="./images/cheese-pizza.jpg" alt="Pizza" class="menu-img" />
+        <h2>Cheese Pizza</h2>
+        <p class="price">₹250</p>
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#burger" data-transition="slide">
+        <img src="./images/veggie-burger.webp" alt="Burger" class="menu-img" />
+        <h2>Veggie Burger</h2>
+        <p class="price">₹180</p>
+      </a>
+    </div>
+
+    <div class="menu-item">
+      <a href="#pasta" data-transition="slide">
+        <img src="./images/white-sauce-pasta.webp" alt="Pasta" class="menu-img" />
+        <h2>White Sauce Pasta</h2>
+        <p class="price">₹220</p>
+      </a>
+    </div>
+  </div>
+
+  <div data-role="footer" data-theme="b">
+    <h4>&copy; 2025 TasteBuds Restaurant</h4>
+  </div>
+</div>
+
+<!-- Pizza Detail Page -->
+<div data-role="page" id="pizza">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Cheese Pizza</h1>
+  </div>
+
+  <div data-role="content">
+    <img src="./images/cheese-pizza.jpg" class="menu-img" />
+    <p>Classic cheese pizza with tomato sauce and mozzarella cheese on a crispy crust.</p>
+    <p class="price">₹250</p>
+  </div>
+</div>
+
+<!-- Burger Detail Page -->
+<div data-role="page" id="burger">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>Veggie Burger</h1>
+  </div>
+
+  <div data-role="content">
+    <img src="./images/veggie-burger.webp" class="menu-img" />
+    <p>Delicious veggie patty with lettuce, tomato, onion, and mayo in a toasted bun.</p>
+    <p class="price">₹180</p>
+  </div>
+</div>
+
+<!-- Pasta Detail Page -->
+<div data-role="page" id="pasta">
+  <div data-role="header" data-theme="b">
+    <a href="#home" data-icon="back">Back</a>
+    <h1>White Sauce Pasta</h1>
+  </div>
+
+  <div data-role="content">
+    <img src="./images/white-sauce-pasta.webp" class="menu-img" />
+    <p>Creamy pasta made with white sauce, herbs, veggies, and parmesan cheese.</p>
+    <p class="price">₹220</p>
+  </div>
+</div>
+
+</body>
+</html>

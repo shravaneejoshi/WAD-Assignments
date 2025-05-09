@@ -1,0 +1,130 @@
+jQuery is a lightweight, "write less, do more", JavaScript library.
+
+The purpose of jQuery is to make it much easier to use JavaScript on your website.
+
+jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish, and wraps them into methods that you can call with a single line of code.
+
+jQuery also simplifies a lot of the complicated things from JavaScript, like AJAX calls and DOM manipulation.
+
+
+A Touch-Optimized Web Framework
+jQuery Mobile is a HTML5-based user interface system designed to make responsive web sites and apps that are accessible on all smartphone, tablet and desktop devices.
+
+
+
+data-role Attribute in jQuery Mobile
+In jQuery Mobile, data-role is used to define the purpose of an HTML element so it can be styled and behave like a mobile UI component.
+
+Common data-role values:
+data-role	Description
+page	Marks a full-screen mobile page
+header	Creates a mobile-style header
+footer	Creates a mobile-style footer
+content	Main content area
+button	Styles the element like a button
+listview	Creates a touch-friendly list
+collapsible	Creates an expandable/collapsible section
+navbar	Defines a navigation bar
+
+
+----------------------------------
+
+✅ 1. Page Structure
+Defines a full mobile page layout.
+
+html
+Copy code
+<div data-role="page">
+  <div data-role="header"><h1>Header</h1></div>
+  <div data-role="content"><p>Main content goes here.</p></div>
+  <div data-role="footer"><h4>Footer</h4></div>
+</div>
+
+✅ 2. Button
+html
+Copy code
+<a href="#" data-role="button">Click Me</a>
+You can also turn inputs into buttons:
+
+html
+Copy code
+<input type="submit" value="Submit" data-role="button">
+✅ 3. Listview
+html
+Copy code
+<ul data-role="listview">
+  <li><a href="#">Item 1</a></li>
+  <li><a href="#">Item 2</a></li>
+</ul>
+With icons:
+
+html
+Copy code
+<ul data-role="listview">
+  <li><a href="#" data-icon="star">Starred</a></li>
+</ul>
+✅ 4. Collapsible (Accordion)
+html
+Copy code
+<div data-role="collapsible">
+  <h4>Click to Expand</h4>
+  <p>Hidden content.</p>
+</div>
+✅ 5. Collapsible Set (Multiple Accordions)
+html
+Copy code
+<div data-role="collapsibleset">
+  <div data-role="collapsible">
+    <h4>Section 1</h4>
+    <p>Content 1</p>
+  </div>
+  <div data-role="collapsible">
+    <h4>Section 2</h4>
+    <p>Content 2</p>
+  </div>
+</div>
+✅ 6. Form Elements
+a. Text Input
+html
+Copy code
+<label for="name">Name:</label>
+<input type="text" name="name" id="name">
+b. Toggle Switch
+html
+Copy code
+<label for="flip">Flip Switch:</label>
+<select name="flip" id="flip" data-role="slider">
+  <option value="off">Off</option>
+  <option value="on">On</option>
+</select>
+c. Checkbox
+html
+Copy code
+<fieldset data-role="controlgroup">
+  <legend>Choose:</legend>
+  <label><input type="checkbox" name="a" id="a">Option A</label>
+  <label><input type="checkbox" name="b" id="b">Option B</label>
+</fieldset>
+✅ 7. Slider (Range Input)
+html
+Copy code
+<label for="slider">Volume:</label>
+<input type="range" name="slider" id="slider" value="25" min="0" max="100">
+✅ 8. Navigation Bar (Navbar)
+html
+Copy code
+<div data-role="navbar">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</div>
+✅ 9. Dialog Page
+html
+Copy code
+<div data-role="page" id="popupPage">
+  <div data-role="header"><h1>Dialog</h1></div>
+  <div data-role="content"><p>This is a dialog page.</p></div>
+</div>
+
+<a href="#popupPage" data-rel="dialog">Open Dialog</a>

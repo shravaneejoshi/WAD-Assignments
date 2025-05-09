@@ -1,0 +1,137 @@
+ng --version
+
+npm install @angular/cli
+
+ng new --help
+
+ng new name-of-app
+
+
+npm start = ng serve 
+npm build = ng build
+
+---creating components---
+ng generate component header
+
+ng g c nameofcomponent
+
+
+ng g service authservice
+
+Things to render on index.html
+=>app-root = root level element
+=> are written in app.component.ts =>template
+->browser with the default port as 4200.
+ http://localhost:4200/
+
+
+ Accessing the class property by placing property called title inside {{ }}. This is called interpolation which is one of the data binding mechanisms to access class properties inside the template.
+
+
+-Why Components in Angular?
+A component is the basic building block of an Angular application
+
+It emphasizes the separation of concerns and each part of the Angular application can be written independently of the other
+
+It is reusable
+
+
+
+AngularJS expressions can be written inside double braces: {{ expression }}.
+
+An AngularJS module defines an application.
+
+The module is a container for the different parts of an application.
+
+The module is a container for the application controllers.
+
+Controllers always belong to a module.
+//
+<div ng-app="myApp">...</div>
+
+<script>
+
+var app = angular.module("myApp", []);
+
+</script>
+//
+
+Adding a Directive
+
+AngularJS lets you extend HTML with new attributes called Directives.
+
+AngularJS has a set of built-in directives which offers functionality to your applications.
+
+AngularJS also lets you define your own directives.
+-------------------------
+AngularJS Directives: changes behaviour of components or elements
+---------------------------------
+AngularJS directives are extended HTML attributes with the prefix ng-.
+
+The ng-app directive initializes an AngularJS application.
+
+The ng-init directive initializes application data.
+
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+
+//
+<div ng-app="" ng-init="firstName='John'">
+
+<p>Name: <input type="text" ng-model="firstName"></p>
+<p>You wrote: {{ firstName }}</p>
+
+</div>
+//
+----
+ngIf directive renders components or elements conditionally based on whether or not an expression is true or false.
+
+Syntax:
+*ngIf = "expression"
+----
+
+Data Binding
+The {{ firstName }} expression, in the example above, is an AngularJS data binding expression.
+
+Data binding in AngularJS binds AngularJS expressions with AngularJS data.
+
+{{ firstName }} is bound with ng-model="firstName".
+
+
+The ng-app Directive
+The ng-app directive defines the root element of an AngularJS application.
+
+The ng-app directive will auto-bootstrap (automatically initialize) the application when a web page is loaded.
+
+The ng-init Directive
+The ng-init directive defines initial values for an AngularJS application.
+
+Normally, you will not use ng-init. You will use a controller or module instead.
+
+You will learn more about controllers and modules later.
+
+The ng-model Directive
+The ng-model directive binds the value of HTML controls (input, select, textarea) to application data.
+
+The ng-model directive can also:
+--------------
+Provide type validation for application data (number, email, required).
+Provide status for application data (invalid, dirty, touched, error).
+Provide CSS classes for HTML elements.
+Bind HTML elements to HTML forms.
+--------------------------
+
+//
+<div ng-app="myApp" ng-controller="myCtrl">
+  Name: <input ng-model="name">
+  <h1>You entered: {{name}}</h1>
+</div>
+//
+
+
+----------------------
+The ngRoute module helps your application to become a Single Page Application.
+
+What is Routing in AngularJS?
+If you want to navigate to different pages in your application, but you also want the application to be a SPA (Single Page Application), with no page reloading, you can use the ngRoute module.
+
+The ngRoute module routes your application to different pages without reloading the entire application.

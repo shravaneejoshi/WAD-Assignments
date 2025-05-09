@@ -45,3 +45,240 @@ git add .(or git add 3A/)
 git commit -m "Initial commit or adding new files"
 git branch -M main        # Rename branch to main if not already
 git push -u origin main   # Push to GitHub
+
+
+
+I have push the code in new branch named "feature/frontend-auth"
+- it will not be visible to you
+-you need to fetch first using (in VS code)
+git fetch
+git switch feature/frontend-auth
+git branch 
+// to merge the code (if it runs properly in your pc then  only merge by repo owner)
+- git switch main
+-git merge feature/frontend-auth(this is branch name)
+// to push the merged code on GitHub
+-git push origin main
+
+// to get the merged code for other team members
+-git switch main
+-git fetch
+-git pull
+
+// to make changes in merged code - again clone the repo
+-create a new branch before adding any code using - git switch -C (new branch name)
+-check branches - git branch
+
+// after doing the changes 
+-git add .  //add the files in staging area
+-git commit -m "message"
+-git push -u origin newBranch name  //push the code to your new created branch
+
+
+ Switch to the branch you want to merge into
+
+git checkout main
+
+2. Pull the latest changes from the remote (optional but recommended)
+
+git pull origin main
+3. Merge the other branch (e.g., feature-branch) into the current one
+
+git merge feature-branch
+This will try to combine the histories of both branches.
+
+4. Resolve conflicts if any
+If there are conflicts, Git will mark them in the files. Open those files, resolve the conflicts, then:
+
+git add .
+git commit
+
+5. (Optional) Push the merged branch to the remote
+bash
+Copy
+Edit
+git push origin main
+
+------
+ git init
+Purpose: Initializes a new Git repository in your current folder.
+
+Syntax:
+
+bash
+Copy code
+git init
+2. git clone
+Purpose: Creates a local copy of a remote repository.
+
+Syntax:
+
+bash
+Copy code
+git clone <repository-url> [folder-name]
+Example:
+
+bash
+Copy code
+git clone https://github.com/username/project.git
+3. git status
+Purpose: Shows the current status of your working directory and staging area.
+
+Syntax:
+
+bash
+Copy code
+git status
+4. git add
+Purpose: Stages changes (files) for the next commit.
+
+Syntax:
+
+bash
+Copy code
+git add <file-name>
+git add .          # Adds all changes
+5. git commit
+Purpose: Records staged changes to the repository history.
+
+Syntax:
+
+bash
+Copy code
+git commit -m "Your commit message"
+Flags:
+
+-m — add a commit message inline
+
+-a — auto stage modified files before committing (not new ones)
+
+6. git log
+Purpose: Shows the commit history.
+
+Syntax:
+
+bash
+Copy code
+git log
+7. git diff
+Purpose: Shows changes between commits, working directory, and staging.
+
+Syntax:
+
+bash
+Copy code
+git diff          # unstaged changes
+git diff --staged # staged changes
+8. git branch
+Purpose: Lists branches or creates a new one.
+
+Syntax:
+
+bash
+Copy code
+git branch              # list all branches
+git branch <branch-name> # create new branch
+9. git checkout
+Purpose: Switches to another branch or commit.
+
+Syntax:
+
+bash
+Copy code
+git checkout <branch-name>
+git checkout -b <branch-name>  # create + switch
+10. git merge
+Purpose: Merges changes from one branch into the current branch.
+
+Syntax:
+
+bash
+Copy code
+git merge <branch-name>
+11. git pull
+Purpose: Fetches changes from a remote repo and merges into local branch.
+
+Syntax:
+
+bash
+Copy code
+git pull origin <branch-name>
+Flags:
+
+--rebase — applies commits one by one to avoid unnecessary merge commits
+
+12. git push
+Purpose: Uploads local commits to a remote repo.
+
+Syntax:
+
+bash
+Copy code
+git push origin <branch-name>
+13. git remote
+Purpose: Manages connections to remote repositories.
+
+Syntax:
+
+bash
+Copy code
+git remote                 # list remote names (e.g., origin)
+git remote -v              # list remotes with URLs
+git remote add <name> <url>  # manually add remote
+14. git config
+Purpose: Sets configuration options like username and email.
+
+Syntax:
+
+bash
+Copy code
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+15. git reset
+Purpose: Unstages changes or rewinds commits.
+
+Syntax:
+
+bash
+Copy code
+git reset <file>         # unstage file
+git reset --soft HEAD~1  # undo last commit but keep changes staged
+git reset --hard HEAD~1  # delete last commit and changes
+16. git stash
+Purpose: Temporarily saves uncommitted changes.
+
+Syntax:
+
+bash
+Copy code
+git stash              # stash current changes
+git stash pop          # apply stashed changes
+git stash list         # view stashes
+🌐 What is origin and remote?
+🔹 remote:
+A remote is a version of your project hosted somewhere else (like GitHub).
+
+You can have multiple remotes like:
+
+origin (default)
+
+upstream (used when forking)
+
+🔹 origin:
+origin is the default name Git gives to the remote you clone from.
+
+It’s a shorthand for the full URL.
+
+Example:
+
+bash
+Copy code
+git remote -v
+Output:
+
+perl
+Copy code
+origin  https://github.com/yourname/repo.git (fetch)
+origin  https://github.com/yourname/repo.git (push)
+
+
